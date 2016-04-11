@@ -116,7 +116,12 @@ public class GraylogPluginDatadog implements MessageOutput {
         if (aggregationKey != "") {
             payload.put("aggregation_key", aggregationKey);
         } else {
-            payload.put("aggregation_key", message.getSource());
+            final StringBuilder sb = new StringBuilder();
+            sb.append(message.getSource());
+            if (message.getField("facility") != null) {
+                sb.append("_").append(message.getField("facility"));
+            }
+            payload.put("aggregation_key", sb.toString());
         }
 
         Response response = eventTarget
@@ -195,7 +200,7 @@ public class GraylogPluginDatadog implements MessageOutput {
 
             configurationRequest.addField(new TextField(
                             CK_DATADOG_AGGREGATION_KEY, "Datadog event aggregation key", "",
-                            "Datadog event custom aggregation key [default: message source]",
+                            "Datadog event custom aggregation key [default: '[source]_[facility]']",
                             ConfigurationField.Optional.OPTIONAL)
             );
 
