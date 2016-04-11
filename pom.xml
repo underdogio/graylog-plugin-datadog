@@ -24,9 +24,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:https://github.com/underdogio/graylog-plugin-datadog.git</connection>
-        <developerConnection>scm:git:git@github.com:https://github.com/underdogio/graylog-plugin-datadog.git</developerConnection>
-        <url>https://github.com/https://github.com/underdogio/graylog-plugin-datadog</url>
+        <connection>scm:git:git@github.com:underdogio/graylog-plugin-datadog.git</connection>
+        <developerConnection>scm:git:git@github.com:underdogio/graylog-plugin-datadog.git</developerConnection>
+        <url>https://github.com/underdogio/graylog-plugin-datadog</url>
         <tag>HEAD</tag>
     </scm>
 

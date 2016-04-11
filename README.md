@@ -1,6 +1,6 @@
 # GraylogPluginDatadog Plugin for Graylog
 
-[![Build Status](https://travis-ci.org/https://github.com/underdogio/graylog-plugin-datadog.svg?branch=master)](https://travis-ci.org/https://github.com/underdogio/graylog-plugin-datadog)
+[![Build Status](https://travis-ci.org/underdogio/graylog-plugin-datadog.svg?branch=master)](https://travis-ci.org/underdogio/graylog-plugin-datadog)
 
 Graylog plugin to output messages as a [Datadog](https://datadoghq.com/) event.
 
@@ -9,7 +9,7 @@ Graylog plugin to output messages as a [Datadog](https://datadoghq.com/) event.
 Installation
 ------------
 
-[Download the plugin](https://github.com/https://github.com/underdogio/graylog-plugin-datadog/releases)
+[Download the plugin](https://github.com/underdogio/graylog-plugin-datadog/releases)
 and place the `.jar` file in your Graylog plugin directory. The plugin directory
 is the `plugins/` folder relative from your `graylog-server` directory by default
 and can be configured in your `graylog.conf` file.
