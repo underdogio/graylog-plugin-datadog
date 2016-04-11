@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/https://github.com/underdogio/graylog-plugin-datadog.svg?branch=master)](https://travis-ci.org/https://github.com/underdogio/graylog-plugin-datadog)
 
-__Use this paragraph to enter a description of your plugin.__
+Graylog plugin to output messages as a [Datadog](https://datadoghq.com/) event.
 
 **Required Graylog version:** 2.0 and later
 
@@ -30,7 +30,18 @@ dramatically by making use of hot reloading. To do this, do the following:
 Usage
 -----
 
-__Use this paragraph to document the usage of your plugin__
+This plugin adds the ability to add message outputs which create events in Datadog.
+
+Requirements:
+
+* Datadog API key - https://app.datadoghq.com/account/settings#api
+* Datadog APP key - https://app.datadoghq.com/account/settings#api
+
+To add a new event output, navigate to *System -> Outputs*, select the `Datadog output` type, and click `Launch new output`.
+
+From this screen you can configure the output to add events to your [Datadog event stream](https://app.datadoghq.com/event/stream).
+
+![](https://github.com/underdogio/graylog-plugin-datadog/blob/master/screenshot-settings.png)
 
 
 Getting started
