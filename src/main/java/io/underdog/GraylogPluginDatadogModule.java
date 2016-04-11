@@ -22,23 +22,6 @@ public class GraylogPluginDatadogModule extends PluginModule {
 
     @Override
     protected void configure() {
-        /*
-         * Register your plugin types here.
-         *
-         * Examples:
-         *
-         * addMessageInput(Class<? extends MessageInput>);
-         * addMessageFilter(Class<? extends MessageFilter>);
-         * addMessageOutput(Class<? extends MessageOutput>);
-         * addPeriodical(Class<? extends Periodical>);
-         * addAlarmCallback(Class<? extends AlarmCallback>);
-         * addInitializer(Class<? extends Service>);
-         * addRestResource(Class<? extends PluginRestResource>);
-         *
-         *
-         * Add all configuration beans returned by getConfigBeans():
-         *
-         * addConfigBeans();
-         */
+        addMessageOutput(GraylogPluginDatadog.class, GraylogPluginDatadog.Factory.class);
     }
 }

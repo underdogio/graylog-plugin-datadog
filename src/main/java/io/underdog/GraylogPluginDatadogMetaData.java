@@ -24,14 +24,12 @@ public class GraylogPluginDatadogMetaData implements PluginMetaData {
 
     @Override
     public String getAuthor() {
-        // TODO Insert author name
-        return "GraylogPluginDatadog author";
+        return "Brett Langdon";
     }
 
     @Override
     public URI getURL() {
-        // TODO Insert correct plugin website
-        return URI.create("https://www.graylog.org/");
+        return URI.create("https://github.com/underdogio/graylog-plugin-datadog");
     }
 
     @Override
@@ -41,8 +39,7 @@ public class GraylogPluginDatadogMetaData implements PluginMetaData {
 
     @Override
     public String getDescription() {
-        // TODO Insert correct plugin description
-        return "Description of GraylogPluginDatadog plugin";
+        return "Graylog plugin to forward messages to Datadog as events";
     }
 
     @Override
