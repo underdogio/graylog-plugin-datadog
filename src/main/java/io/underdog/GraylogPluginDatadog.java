@@ -58,7 +58,7 @@ public class GraylogPluginDatadog implements MessageOutput {
         tags = configuration.getString(CK_DATADOG_TAGS, "").split(",");
         priority = configuration.getString(CK_DATADOG_PRIORITY, "normal");
         alertType = configuration.getString(CK_DATADOG_ALERT_TYPE, "info");
-        aggregationKey = configuration.getString(CK_DATADOG_AGGREGATION_KEY, "info");
+        aggregationKey = configuration.getString(CK_DATADOG_AGGREGATION_KEY, "");
 
         try {
             eventUrl = new URI(String.format("%s?api_key=%s&app_key=%s",
