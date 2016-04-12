@@ -2,26 +2,27 @@ sudo: required
 dist: trusty
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
 addons:
   apt:
     packages:
-    - rpm
+      - rpm
 before_deploy:
-- mvn jdeb:jdeb && export RELEASE_DEB_FILE=$(ls target/*.deb)
-- mvn rpm:rpm && export RELEASE_RPM_FILE=$(find target/ -name '*.rpm' | tail -1)
-- rm -f target/original-*.jar
-- export RELEASE_PKG_FILE=$(ls target/*.jar)
-- echo "Deploying release to GitHub releases"
+  - mvn jdeb:jdeb && export RELEASE_DEB_FILE=$(ls target/*.deb)
+  - mvn rpm:rpm && export RELEASE_RPM_FILE=$(find target/ -name '*.rpm' | tail -1)
+  - rm -f target/original-*.jar
+  - export RELEASE_PKG_FILE=$(ls target/*.jar)
+  - echo "Deploying release to GitHub releases"
 deploy:
   provider: releases
   api_key:
-    secure: "AQRWH8EvQLUfB6M2Zop1s1ETGb4RN+g+ubVgV2J0oDYs0jwA7jE2chQkTBYNKsXJWZEe4sv6wDCB/kYmwXdVbleU9iY/Obx3kgS2fh7pROR21zhQgG3WdLoqB6IJr09hZH6rMc8w8fGsEhLuyD7JSquViiSWKg1Pxv+phB4QXqL0xzNhZ1W1+kmTpQQ8n3P0ktzPdVYRY5SyVj9A7GYMCFHT/SQ1cvxzeON+2uYcFj2m56dSNR0i7Q3wZStMwll2CYAaAptdO86x/s9avlqcZRhsaHVOazizInZA3mu2Xi9i5XyNfavSv0VH8T9ax12zPey/rfZ3GtlXGtWhLcAQp5uwcxe3Jjp+hOWAJ9cU0kFRp6J46PJfu9RJJR1YvtsML11tDkyU7vtqO5BNU3gPUKCxNbu477hMiGszdDRRSRe0/gM2qlelPLr3+hw8K6+gidDzkl0AE/TUFP3LT8UZofOnMAhhs7C8/bjy8n45aHJ+306KU1tg7N9M5wJ7jWAKK/tvVW4I9Qs6McaG0L2p+fghpmWGpwPSmzbl3NIjxtre0wPfz8+YmKOzXZanl5CL6hMGUNhBhipb7KTkQ01mjZx/SpJdNhB2ddqx4SGHOriBRENteR9/1WZPOxtiMu/EkRpBdHLHu4UfAFbI7aD9qRDCdteTzRy/fcuEzRYqMK0="
+    secure: eYxwPLdBlIEXFZ9JnyD9JQRgDFy59/VHj3vMi78co+3JyrcM7Z1RxLzNXzlylGB5174xQLN7SVfogtrHM/p1I6uCCGb0yeNzcUHiez9qXOc2BDF5iuCk912BOcTg+wLfDeJSBaJM516bozKw/ZKiCt6vq1XmS65z4zWAp6etK20ZCDbFLNwgrlQnqPloamRL91UD3fARiZPoMKiea06g/5u3L+9qxugmEwKx+LmslS50TjFCsuDd4Ce3MkD2ghAxctVMAJX1060A7krF2pHB1Jhx84cC+seCrtbv/pl3HtxgKzaWJ0SlCct2OvkOedCpnNZ5+efrVJhuzvlPpMqwV4pZ54Cyxa/QS5hoEoCO4y6GGDS8yiExZoGY/OMZCSwFUP7kefY9cqU8eH/K/D2CISWVd7trMpWpbsGfnJUmXpO0ipIwmnmCVkA+tQi9qy5GprGET8yBxzRWCwZDvm7PkKWvh6M9Xbfnzz16rnMDaajwpDyBNbDnArpNR6BX/BIDDvECk7+wEeAcYM8rDa5k+gTyH8biKMW7D34W3ott1bTXNllY81uOpN/oAVjDJjToo9RmvbMwcipbhOGJIgp/59Po7SCy9OPzngWew5JTKuklAItoWjm5p4cxULWD0PM5/IlzkswY5dOQ1PR/NgIYa25zMWCiCt83qVVtOHWqCqA=
   file:
-  - "${RELEASE_PKG_FILE}"
-  - "${RELEASE_DEB_FILE}"
-  - "${RELEASE_RPM_FILE}"
+    - "${RELEASE_PKG_FILE}"
+    - "${RELEASE_DEB_FILE}"
+    - "${RELEASE_RPM_FILE}"
   skip_cleanup: true
   on:
+    repo: underdogio/graylog-plugin-datadog
     tags: true
     jdk: oraclejdk8
