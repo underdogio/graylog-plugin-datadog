@@ -4,7 +4,7 @@
 
 Graylog plugin to output messages as a [Datadog](https://datadoghq.com/) event.
 
-**Required Graylog version:** 2.0 and later
+**Required Graylog version:** 1.2 and later
 
 Installation
 ------------
