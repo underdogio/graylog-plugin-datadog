@@ -7,7 +7,7 @@
 
     <groupId>io.underdog</groupId>
     <artifactId>graylog-plugin-datadog</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -25,7 +25,7 @@
         <connection>scm:git:git@github.com:underdogio/graylog-plugin-datadog.git</connection>
         <developerConnection>scm:git:git@github.com:underdogio/graylog-plugin-datadog.git</developerConnection>
         <url>https://github.com/underdogio/graylog-plugin-datadog</url>
-        <tag>v1.0.3</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
